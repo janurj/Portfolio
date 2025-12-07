@@ -6,7 +6,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Certifications from "./components/Certifications";
 import Internships from "./components/Internships";
-import MailMe from "./components/Mailme";
+import MailMe from "./components/MailMe";
 import Footer from "./components/Footer";
 
 function App() {
