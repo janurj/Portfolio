@@ -1,0 +1,87 @@
+/* wrapper fills available width and centers contents */
+.cgpa-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* ensure wrapper can grow so flex centering works inside hero */
+}
+
+/* make the outer visual circle match your hero circle sizing if needed */
+.cgpa-circle{
+  width:300px;          /* match the big circle size in hero (adjust if your hero uses 300) */
+  height:300px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  /* optional subtle background to match design */
+  background: radial-gradient(circle at 30% 30%, rgba(59,130,246,0.06), rgba(0,0,0,0.12));
+}
+
+/* SVG should fill the parent exactly and preserve center */
+.progress-ring{
+  width: 80%;
+  height: 80%;
+  display:block;
+  transform: rotate(-90deg); /* start from top */
+}
+
+/* background ring look */
+.ring-bg{
+  stroke: rgba(0,0,0,0.25);
+  opacity:0.4;
+}
+
+/* progress stroke */
+.ring-progress{
+  stroke-linecap: round;
+  stroke: #60a5fa; /* blue */
+  stroke-opacity: 1;
+}
+
+/* center labels */
+.cgpa-value{
+  position:absolute;
+  text-align:center;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  pointer-events:none;
+}
+
+.cgpa-value .value{
+  font-size:34px;
+  font-weight:800;
+  color:#fff;
+  line-height:1;
+}
+
+.cgpa-value .label{
+  font-size:12px;
+  color:#9aa6b3;
+  margin-top:-4px;
+}
+
+.cgpa-value .degree{
+  font-size:16px;
+  color:#cbd5e1;
+  font-weight:700;
+  margin-top:6px;
+}
+
+/* responsive tweak: make chart smaller on small screens */
+@media (max-width:600px){
+  .cgpa-circle{
+    width:200px;
+    height:200px;
+  }
+  .progress-ring{ width:86%; height:86%; }
+  .cgpa-value .value{ font-size:26px; }
+  .cgpa-value .degree{ font-size:14px; }
+}
